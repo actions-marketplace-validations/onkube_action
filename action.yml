@@ -1,16 +1,21 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Onkube Deployment Action'
+description: 'Deployment Action for onkube.com'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  token: 
+    description: 'onkube token (ex. do okctl login to get one)'
     required: true
-    default: 'World'
+    default: 'None'
+  image: 
+    description: 'Image URL (ex. docker.io/library/nginx:latest)'
+    required: true
+    default: 'None' 
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  url: 
+    description: 'URL of the deployed service'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.token }}
+    - ${{ inputs.image }}
