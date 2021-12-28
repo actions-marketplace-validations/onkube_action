@@ -11,4 +11,4 @@ RUN tar zxf okctl-linux-amd64.tar.gz
 RUN mv okctl /usr/local/bin/okctl
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
