@@ -1,4 +1,7 @@
 # action.yml
+branding:
+  icon: 'box'
+  color: 'orange'
 name: 'Onkube Deployment Action'
 description: 'Deployment Action for onkube.com'
 inputs:
