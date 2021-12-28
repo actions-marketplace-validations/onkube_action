@@ -1,21 +1,27 @@
-# Hello world docker action
+# Deploy your app to onkube.io Platform
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action deploys your Container Image to onkube.io Platform. 
 
 ## Inputs
 
-## `who-to-greet`
+## `image`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** Image URL (ex. docker.io/library/nginx:latest)
+## `token`
+
+**Required** onkube token (ex. do okctl login to get one)
 
 ## Outputs
 
-## `time`
+## `url`
 
-The time we greeted you.
+The URL of the deployment
 
 ## Example usage
 
-uses: actions/hello-world-docker-action@v1
+```yaml
+uses: onkube/action@v1
 with:
-  who-to-greet: 'Mona the Octocat'
+  token: '<your token>'
+  image: docker.io/library/nginx:latest
+```
