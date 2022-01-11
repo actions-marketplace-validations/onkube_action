@@ -4,21 +4,6 @@ branding:
   color: 'orange'
 name: 'Onkube Deployment Action'
 description: 'Deployment Action for onkube.com'
-inputs:
-  token: 
-    description: 'onkube token (ex. do okctl login to get one)'
-    required: true
-    default: 'None'
-  image: 
-    description: 'Image URL (ex. docker.io/library/nginx:latest)'
-    required: true
-    default: 'None' 
-outputs:
-  url: 
-    description: 'URL of the deployed service'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.token }}
-    - ${{ inputs.image }}

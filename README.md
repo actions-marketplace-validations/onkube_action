@@ -2,26 +2,13 @@
 
 This action deploys your Container Image to onkube.io Platform. 
 
-## Inputs
-
-## `image`
-
-**Required** Image URL (ex. docker.io/library/nginx:latest)
-## `token`
-
-**Required** onkube token (ex. do okctl login to get one)
-
-## Outputs
-
-## `url`
-
-The URL of the deployment
-
-## Example usage
+## Usage
 
 ```yaml
-uses: onkube/action@v1
-with:
-  token: '<your token>'
-  image: docker.io/library/nginx:latest
+- uses: onkube/action@v1
+  env:
+    ONKUBE_ACCESS_TOKEN: ${{ secrets.OKCTL_TOKEN }}
+  with:
+    args: "deploy -i httpd:alpine --port 80 --name httpd-test --public"
+
 ```
