@@ -1,2 +1,2 @@
 #!/bin/sh -l
-sh -c "okctl $*"
+sh -c "onctl $*"
